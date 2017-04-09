@@ -1,0 +1,53 @@
+#rebinding prefix
+unbind C-b
+set -g prefix C-z
+
+#enabling terminal navigation
+set-window-option -g xterm-keys on
+
+#setting window title
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+
+#window navigation
+bind -n C-S-Left previous-window
+bind -n C-S-Right next-window
+
+#pane navigation
+bind -n M-Up select-pane -U 
+bind -n M-Down select-pane -D 
+bind -n M-Left select-pane -L 
+bind -n M-Right select-pane -R 
+
+#pane resizing
+bind -n S-Up resize-pane -U 2
+bind -n S-Down resize-pane -D 2
+bind -n S-Left resize-pane -L 5
+bind -n S-Right resize-pane -R 5
+
+#reload config
+#bind R source-file ~/Desktop/tmux ; display-message "reloaded :)"
+
+#theme settings
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+set -g default-terminal "screen-256color"
+
+set-window-option -g status-bg black
+set-window-option -g status-fg white
+
+set-window-option -g status-left ""
+set-window-option -g status-left-bg green
+set-window-option -g status-left-fg black
+
+set-window-option -g status-right ""
+set-window-option -g status-right-fg black
+set-window-option -g status-right-bg white
+
+set-window-option -g window-status-format ""
+
+set-window-option -g window-status-current-format ""
+set-window-option -g window-status-current-fg green
+set-window-option -g window-status-current-bg black
+
+set-window-option -g pane-border-fg black
+set-window-option -g pane-active-border-fg black

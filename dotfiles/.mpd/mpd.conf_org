@@ -1,0 +1,40 @@
+#port "6600"
+music_directory "/media/sola/61_GB/Music"
+playlist_directory "/home/sola/Music/"
+db_file "~/.mpd/mpd.db"
+pid_file "~/.mpd/mpd.pid"
+
+log_level            "verbose"
+auto_update    "yes"
+auto_update_depth "3"
+follow_outside_symlinks    "yes"
+follow_inside_symlinks        "yes"
+
+user "sola"
+
+audio_output {
+        type                    "pulse"
+        name                    "pulse audio"
+}
+
+audio_output {
+	type "fifo"
+	name "mpd_fifo"
+	path "/home/sola/.mpd/mpd.fifo"
+	format "44100:16:2"
+}
+
+audio_output {
+	type		"httpd"
+	name		"My HTTP Stream"
+	encoder		"lame"		# optional, vorbis or lame
+	port		"8000"
+	bind_to_address "0.0.0.0"               # optional, IPv4 or IPv6
+	quality		"5.0"			# do not define if bitrate is defined
+#	bitrate		"128"			# do not define if quality is defined
+	format		"44100:16:1"
+	max_clients     "0"                     # optional 0=no limit
+}
+
+samplerate_converter	"0"
+#audio_output_format            	"44100:16:2"

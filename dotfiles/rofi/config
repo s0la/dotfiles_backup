@@ -1,0 +1,19 @@
+rofi.bw: 0
+rofi.lines: 10
+rofi.width: 600
+rofi.padding: 5
+
+rofi.font: monaco 9
+
+rofi.line-margin: 5
+rofi.hide-scrollbar: true
+rofi.separator-style: none
+
+rofi.opacity: 90
+
+! theme
+rofi.color-enabled: true
+rofi.color-window: #333333, #333333, #333333
+rofi.color-normal: #00000000, #707070, #00000000, #303030, #c1c1c1
+rofi.color-active: #555, #aaa, #00000000, #394249, #c1c1c1
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844

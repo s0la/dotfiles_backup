@@ -1,0 +1,29 @@
+music_directory "/media/sola/61_GB/Music"
+playlist_directory "/home/sola/Music/"
+
+pid_file "~/.mpd/mpd.pid"
+db_file "~/.mpd/mpd.db"
+
+audio_output {
+        type                    "pulse"
+        name                    "pulse audio"
+}
+
+audio_output {
+	type "fifo"
+	name "fifo: ncmpcpp visualizer"
+	path "/home/sola/.mpd/mpd.fifo"
+	format "44100:16:2"
+}
+
+audio_output {
+	type		"httpd"
+	name		"My HTTP Stream"
+	encoder		"lame"		# optional, vorbis or lame
+	port		"8001"
+#	bind_to_address "0.0.0.0"               # optional, IPv4 or IPv6
+#	quality		"5.0"			# do not define if bitrate is defined
+	bitrate		"128"			# do not define if quality is defined
+	format		"44100:16:1"
+	max_clients     "0"                     # optional 0=no limit
+}
